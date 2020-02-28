@@ -6,7 +6,9 @@ namespace acronym
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("enter a long string:");
+            string str=Console.ReadLine();
+            Console.WriteLine(str);
         }
     }
 }
