@@ -7,40 +7,46 @@ namespace PersonList
     {
         static void Main(string[] args)
         {
-             List<string> Persons = new List<string>{"andy","mandy","sandy","tom","jerry"};
-            //Console.WriteLine("Hello World!");
-           if (FindDuplicates(Persons)) { 
-               Console.WriteLine($"Yes we find duplicate"); };
+                var person = new Person();
 
-          
-            foreach (var item in Persons)
+            List<string> Person = new List<string> { "andy", "mandy", "sandy", "tom", "jerry", "tom" };
+            //Console.WriteLine("Hello World!");
+            if (FindDuplicates(Person))
             {
-             Console.WriteLine(item);   
+                Console.WriteLine("Yes found a duplicate");
+            };
+
+
+            foreach (var item in Person)
+            {
+                Console.WriteLine(item);
             }
+            
         }
 
         public static bool FindDuplicates(List<string> array)
-    {
-        var dict = new Dictionary<string, int>();
-        foreach (var value in array)
         {
-            if (dict.ContainsKey(value))
-                dict[value]++;
-            else
-                dict[value] = 1;
+            bool result= false;
+            var hashset = new HashSet<string>();
+            foreach (var name in array)
+            {
+                if (!hashset.Add(name))
+                {
+                    Console.WriteLine("List contains duplicate values.");
+                    result = true;
+                    
+                }
+                else
+                {
+                    result =false;
+                }
+               
+            }
+            return result;
         }
-        foreach (var pair in dict)
-        {
-            if (pair.Value > 1)
-                return true;
-            else
-                return false;
-        }
-        return false;
+
+
     }
-
-
- }
 }
 
 //

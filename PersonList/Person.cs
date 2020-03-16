@@ -4,8 +4,9 @@ namespace PersonList
 {
     class Person
     {
-        [Required(ErrorMessage = "Name is required")]
-   string name { get; set; }
+        // [Required(ErrorMessage = "Name is required")]
+   string name ;
+
                 
         int num;
     }
