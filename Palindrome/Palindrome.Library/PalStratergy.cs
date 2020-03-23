@@ -4,7 +4,7 @@ namespace Palindrome.Library
 {
     public class PalStratergy 
     {
-        // This method efficiently checks if a string is a palindrome by iterating only n/2 times.
+      
         public bool IsPalindrome(string checkString)
         {
             string string1 = checkString;
